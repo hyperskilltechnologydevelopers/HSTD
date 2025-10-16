@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>book a course demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="container">
+        <h1>Book Your Course On HSTD</h1>
+        <p class="subtitle">Choose a course and schedule a free demo session.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <form id="bookingForm" novalidate>
+                <div class="grid">
+                    <div class="field">
+                        <label for="name">Full Name</label>
+                        <input id="name" name="name" type="text" placeholder="Alex Johnson" required>
+                        <small class="error" data-error-for="name"></small>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="alex@example.com" required>
+                        <small class="error" data-error-for="email"></small>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" placeholder="+1 555 123 4567" required>
+                        <small class="error" data-error-for="phone"></small>
+                    </div>
+                    <div class="field">
+                        <label for="category">Category</label>
+                        <select id="category" name="category" required>
+                            <option value="" disabled selected>Select a category</option>
+                        </select>
+                        <small class="error" data-error-for="category"></small>
+                    </div>
+                    <div class="field">
+                        <label for="dob">Date of Birth</label>
+                        <input id="dob" name="dob" type="date">
+                        <small class="error" data-error-for="dob"></small>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="course">Course</label>
+                        <select id="course" name="course" required disabled>
+                            <option value="" disabled selected>Select a course</option>
+                        </select>
+                        <small class="error" data-error-for="course"></small>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="2" placeholder="Street, City, State / Province, ZIP / Postal code"></textarea>
+                    <small class="error" data-error-for="address"></small>
+                </div>
+
+                <section id="hourlyFields" class="card" style="display:none; margin-top:12px;">
+                    <h3>Hourly Tuition Details</h3>
+                    <div class="grid">
+                        <div class="field">
+                            <label for="grade">Grade</label>
+                            <select id="grade" name="grade">
+                                <option value="" disabled selected>Select grade</option>
+                                <option value="class-1">Class 1</option>
+                                <option value="class-2">Class 2</option>
+                                <option value="class-3">Class 3</option>
+                                <option value="class-4">Class 4</option>
+                                <option value="class-5">Class 5</option>
+                                <option value="class-6">Class 6</option>
+                                <option value="class-7">Class 7</option>
+                                <option value="class-8">Class 8</option>
+                                <option value="class-9">Class 9</option>
+                                <option value="class-10">Class 10</option>
+                                <option value="class-11">Class 11</option>
+                                <option value="class-12">Class 12</option>
+                                <option value="bca">BCA</option>
+                            </select>
+                            <small class="error" data-error-for="grade"></small>
+                        </div>
+                        <div class="field">
+                            <label for="graduationType">Graduation Type</label>
+                            <select id="graduationType" name="graduationType">
+                                <option value="" disabled selected>Select type</option>
+                                <option value="school">School</option>
+                                <option value="university">University</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <small class="error" data-error-for="graduationType"></small>
+                        </div>
+                    </div>
+
+                    <div class="grid">
+                        <div class="field">
+                            <label for="subject">Subject</label>
+                            <input id="subject" name="subject" type="text" placeholder="e.g., Mathematics, Physics">
+                            <small class="error" data-error-for="subject"></small>
+                        </div>
+                        <div class="field">
+                            <label for="hours">Hours Required</label>
+                            <input id="hours" name="hours" type="number" min="1" step="1" placeholder="e.g., 2">
+                            <small class="error" data-error-for="hours"></small>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="tuitionFile">Upload image/book file (optional)</label>
+                        <input id="tuitionFile" name="tuitionFile" type="file" accept="image/*,.pdf,.doc,.docx">
+                        <small class="error" data-error-for="tuitionFile"></small>
+                    </div>
+                </section>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="date">Preferred Date</label>
+                        <input id="date" name="date" type="date" required>
+                        <small class="error" data-error-for="date"></small>
+                    </div>
+                    <div class="field">
+                        <label for="time">Preferred Time</label>
+                        <input id="time" name="time" type="time" required>
+                        <small class="error" data-error-for="time"></small>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <fieldset>
+                        <legend>What level of course do you want to do?</legend>
+                        <div class="radio-group">
+                            <label for="level-base"><input id="level-base" type="radio" name="level" value="base-level"> Base level</label>
+                            <label for="level-intermediate"><input id="level-intermediate" type="radio" name="level" value="intermediate-level"> Intermediate level</label>
+                            <label for="level-professional"><input id="level-professional" type="radio" name="level" value="professional-level"> Professional level</label>
+                            <label for="level-other"><input id="level-other" type="radio" name="level" value="other"> Other</label>
+                        </div>
+                    </fieldset>
+                    <small class="error" data-error-for="level"></small>
+                </div>
+
+                <div class="field">
+                    <fieldset>
+                        <legend>How did you hear about us?</legend>
+                        <div class="radio-group">
+                            <label for="referral-ads"><input id="referral-ads" type="radio" name="referral" value="advertisement"> Advertisement</label>
+                            <label for="referral-social"><input id="referral-social" type="radio" name="referral" value="social-media"> Social Media</label>
+                            <label for="referral-website"><input id="referral-website" type="radio" name="referral" value="website"> Website</label>
+                            <label for="referral-friends"><input id="referral-friends" type="radio" name="referral" value="friend-and-family"> Friend and Family</label>
+                            <label for="referral-other"><input id="referral-other" type="radio" name="referral" value="other"> Other</label>
+                        </div>
+                    </fieldset>
+                    <small class="error" data-error-for="referral"></small>
+                </div>
+
+                <div class="field">
+                    <label for="notes">Notes (optional)</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Share goals or questions for the demo..."></textarea>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn primary">Book Demo</button>
+                    <button type="reset" class="btn">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card" aria-live="polite" aria-atomic="true">
+            <h2>Your Demo Bookings</h2>
+            <div id="bookingsEmpty" class="empty">No bookings yet. Submit the form to see them here.</div>
+            <ul id="bookingsList" class="list"></ul>
+        </section>
+    </main>
+
+    <footer class="container footer">
+        <small>© <span id="year"></span> Course Demo. All rights reserved.</small>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
